@@ -16,6 +16,9 @@ inputs:
   releaseName:
     description: 'Relevant if renderEngine == helm. Release name to be used for Helm option.'
     required: false
+  namespace:
+    description: 'Relevant if renderEngine == helm. Namespace to be used for Helm option.'
+    required: false
   kustomizationPath:
     description: 'Required if renderEngine == kustomization. Path to directory or the Git repository containing kustomization.yaml file.'
     required: false

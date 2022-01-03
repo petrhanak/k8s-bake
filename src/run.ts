@@ -103,7 +103,14 @@ export class HelmRenderEngine extends RenderEngine {
             }
         }
         args.push(chartPath);
-        
+
+        const namespace = core.getInput('namespace', { required: false });
+
+        if (namespace) {
+            args.push('--namespace');
+            args.push(namespace);
+        }
+
         const overrideFilesInput = core.getInput('overrideFiles', { required: false });
         if (!!overrideFilesInput) {
             core.debug("Adding overrides file inputs");
